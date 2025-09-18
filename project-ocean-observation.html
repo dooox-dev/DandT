@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海洋観測システムプロジェクト - 一般社団法人D&T</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="images/logo.png" alt="一般社団法人D&T" class="logo-img">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html#home">トップページ</a></li>
+                    <li><a href="index.html#business">事業説明</a></li>
+                    <li><a href="index.html#events">イベント一覧</a></li>
+                    <li><a href="index.html#about">団体について</a></li>
+                    <li><a href="index.html#membership">会員・サポーター</a></li>
+                    <li><a href="index.html#contact" class="nav-cta">お問い合わせ</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 背景動画 -->
+        <div class="background-video-container">
+            <video class="background-video" autoplay muted loop playsinline preload="metadata">
+                <source src="images/background-video.mp4" type="video/mp4">
+                <!-- フォールバック用静止画 -->
+                <img src="images/supporter.jpg" alt="Background" class="fallback-image">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        
+        <section class="breadcrumb">
+            <div class="container">
+                <nav class="breadcrumb-nav">
+                    <a href="index.html">トップページ</a>
+                    <span class="separator">></span>
+                    <a href="index.html#business">事業説明</a>
+                    <span class="separator">></span>
+                    <span class="current">海洋観測システムプロジェクト</span>
+                </nav>
+            </div>
+        </section>
+
+        <section class="detail-hero">
+            <div class="container">
+                <h1 class="detail-title">定置網を用いた海洋観測システムの実証実験</h1>
+                <p class="detail-subtitle">持続可能な海洋資源管理と環境保全技術の革新</p>
+            </div>
+        </section>
+
+        <section class="detail-content">
+            <div class="container">
+                <div class="coming-soon-content">
+                    <div class="coming-soon-message">
+                        <h2>Coming Soon</h2>
+                        <p>定置網を用いた海洋観測システムの実証実験に関する詳細情報は、現在準備中です。</p>
+                        <p>近日中に詳しい内容を公開予定ですので、しばらくお待ちください。</p>
+                        <div class="coming-soon-icon">
+                            <div class="icon-placeholder">🚧</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="contact-buttons">
+                    <a href="https://forms.gle/ndo8gJfLiSaXxQmV7" class="btn btn-primary" target="_blank" rel="noopener noreferrer">プロジェクト参加・協力について相談する</a>
+                    <a href="index.html#business" class="btn btn-secondary">実証実験支援について詳しく見る</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="一般社団法人D&T" class="footer-logo-img">
+                </div>
+                <nav class="footer-nav">
+                    <a href="index.html#home">トップページ</a>
+                    <a href="index.html#business">事業説明</a>
+                    <a href="index.html#events">イベント一覧</a>
+                    <a href="index.html#about">団体について</a>
+                    <a href="index.html#membership">会員・サポーター</a>
+                    <a href="index.html#contact">お問い合わせ</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 一般社団法人D&T All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ハンバーガーメニューの動作
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // 背景画像のカーソル連動動作
+        document.addEventListener('mousemove', function(e) {
+            const main = document.querySelector('main');
+            if (main) {
+                const x = (e.clientX / window.innerWidth) * 100;
+                const y = (e.clientY / window.innerHeight) * 100;
+                
+                const offsetX = (x - 50) * 0.1;
+                const offsetY = (y - 50) * 0.1;
+                
+                main.style.backgroundPosition = `${50 + offsetX}% ${50 + offsetY}%`;
+            }
+        });
+    </script>
+</body>
+</html>
