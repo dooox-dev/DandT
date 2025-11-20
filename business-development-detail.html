@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規事業の創出支援 - 一般社団法人D&T</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #0066cc;
+            border-radius: 25px;
+            padding: 8px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            color: #0066cc;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .lang-switch:hover {
+            background: #0066cc;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+        }
+
+        .lang-ja, .lang-en {
+            transition: opacity 0.3s ease;
+        }
+
+        html[lang="en"] .lang-ja {
+            display: none;
+        }
+
+        html[lang="ja"] .lang-en {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 言語切り替えボタン -->
+    <button class="lang-switch" onclick="toggleLanguage()">
+        <span class="lang-ja">English</span>
+        <span class="lang-en">日本語</span>
+    </button>
+
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="images/logo.png" alt="一般社団法人D&T" class="logo-img">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html#home"><span class="lang-ja">トップページ</span><span class="lang-en">Home</span></a></li>
+                    <li><a href="index.html#business"><span class="lang-ja">事業説明</span><span class="lang-en">Business</span></a></li>
+                    <li><a href="index.html#events"><span class="lang-ja">イベント一覧</span><span class="lang-en">Events</span></a></li>
+                    <li><a href="index.html#about"><span class="lang-ja">団体について</span><span class="lang-en">About</span></a></li>
+                    <li><a href="index.html#membership"><span class="lang-ja">会員・サポーター</span><span class="lang-en">Membership</span></a></li>
+                    <li><a href="index.html#contact" class="nav-cta"><span class="lang-ja">お問い合わせ</span><span class="lang-en">Contact</span></a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 背景動画 -->
+        <div class="background-video-container">
+            <video class="background-video" autoplay muted loop playsinline preload="metadata">
+                <source src="images/background-video.mp4" type="video/mp4">
+                <!-- フォールバック用静止画 -->
+                <img src="images/supporter.jpg" alt="Background" class="fallback-image">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        
+        <section class="breadcrumb">
+            <div class="container">
+                <nav class="breadcrumb-nav">
+                    <a href="index.html"><span class="lang-ja">トップページ</span><span class="lang-en">Home</span></a>
+                    <span class="separator">></span>
+                    <a href="index.html#business"><span class="lang-ja">事業説明</span><span class="lang-en">Business</span></a>
+                    <span class="separator">></span>
+                    <span class="current"><span class="lang-ja">新規事業の創出支援</span><span class="lang-en">New Business Development</span></span>
+                </nav>
+            </div>
+        </section>
+
+        <section class="detail-hero">
+            <div class="container">
+                <h1 class="detail-title">
+                    <span class="lang-ja">新規事業の創出支援</span>
+                    <span class="lang-en">New Business Development</span>
+                </h1>
+                <p class="detail-subtitle">
+                    <span class="lang-ja">地域企業の技術力向上と新たなビジネス機会の創出を総合的にサポート</span>
+                    <span class="lang-en">Comprehensive support for local businesses to enhance capabilities and create new opportunities</span>
+                </p>
+            </div>
+        </section>
+
+        <section class="detail-content">
+            <div class="container">
+                <div class="content-section">
+                    <h2><span class="lang-ja">事業概要</span><span class="lang-en">Overview</span></h2>
+                    <p class="lang-ja">日立市の企業が持つ技術やサービスを活かし、新たなビジネス機会を創出するためのマッチング支援を行います。地域企業とスタートアップ、研究機関、投資家などを繋ぐネットワークを活用し、最新の市場情報や技術トレンドの提供、ビジネスパートナーの紹介、協業機会の創出を通じて、企業の新規事業展開をサポートします。私たちは事業戦略を策定するのではなく、企業が持つリソースと市場のニーズを繋ぐ架け橋の役割を果たし、新しいビジネスチャンスを提供します。</p>
+                    <p class="lang-en">We support matching services to create new business opportunities leveraging Hitachi City companies' technologies and services. Using our network connecting local businesses, startups, research institutions, and investors, we support new business development through market insights, technology trends, partner introductions, and collaboration opportunities. We bridge company resources with market needs, providing new business chances rather than creating strategies.</p>
+                </div>
+
+                <div class="content-section">
+                    <h2><span class="lang-ja">主なサービス内容</span><span class="lang-en">Main Services</span></h2>
+                    <div class="services-detail">
+                        <div class="service-detail-item">
+                            <h3><span class="lang-ja">市場情報・トレンド提供</span><span class="lang-en">Market Intelligence & Trends</span></h3>
+                            <p class="lang-ja">最新の市場動向や技術トレンド、ビジネス機会に関する情報を定期的に提供します。</p>
+                            <p class="lang-en">We regularly provide information on market trends, technology developments, and business opportunities.</p>
+                            <ul>
+                                <li><span class="lang-ja">例:業界トレンドレポート</span><span class="lang-en">e.g., Industry trend reports</span></li>
+                                <li><span class="lang-ja">例:新技術情報の共有</span><span class="lang-en">e.g., New technology insights</span></li>
+                                <li><span class="lang-ja">例:ビジネス機会の紹介</span><span class="lang-en">e.g., Business opportunity introductions</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="service-detail-item">
+                            <h3><span class="lang-ja">技術・人材マッチング</span><span class="lang-en">Technology & Talent Matching</span></h3>
+                            <p class="lang-ja">新規事業に必要な技術や人材を、ネットワークを活用して効率的にマッチングします。</p>
+                            <p class="lang-en">We efficiently match required technologies and talent for new businesses through our network.</p>
+                            <ul>
+                                <li><span class="lang-ja">例:技術パートナー企業の紹介</span><span class="lang-en">e.g., Technology partner introductions</span></li>
+                                <li><span class="lang-ja">例:専門人材のスカウト・紹介</span><span class="lang-en">e.g., Expert talent recruitment</span></li>
+                                <li><span class="lang-ja">例:大学・研究機関との連携仲介</span><span class="lang-en">e.g., University & research liaison</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="service-detail-item">
+                            <h3><span class="lang-ja">ビジネスマッチング支援</span><span class="lang-en">Business Matching Support</span></h3>
+                            <p class="lang-ja">企業のニーズに合わせて、適切なビジネスパートナーや協業機会を紹介します。</p>
+                            <p class="lang-en">We introduce appropriate business partners and collaboration opportunities tailored to company needs.</p>
+                            <ul>
+                                <li><span class="lang-ja">例:投資家・VCとのマッチング</span><span class="lang-en">e.g., Investor & VC matching</span></li>
+                                <li><span class="lang-ja">例:協業プロジェクトの仲介</span><span class="lang-en">e.g., Collaboration project mediation</span></li>
+                                <li><span class="lang-ja">例:ビジネスイベントへの参加機会提供</span><span class="lang-en">e.g., Business event participation</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="content-section">
+                    <h2><span class="lang-ja">対象企業について</span><span class="lang-en">Target Companies</span></h2>
+                    <p class="lang-ja">業種や規模を問わず、新規事業創出にご関心のある企業の皆様からのご相談をお待ちしております。まずはお気軽にお問い合わせください。</p>
+                    <p class="lang-en">We welcome inquiries from companies interested in new business development, regardless of industry or size. Please feel free to contact us.</p>
+                </div>
+
+                <div class="related-navigation">
+                    <h3><span class="lang-ja">関連ページ</span><span class="lang-en">Related Pages</span></h3>
+                    <div class="related-links">
+                        <div class="related-section">
+                            <h4><span class="lang-ja">プロジェクト実例</span><span class="lang-en">Project Examples</span></h4>
+                            <div class="related-items">
+                                <a href="project-hyperspectral.html" class="related-link"><span class="lang-ja">ハイパースペクトルカメラ実証実験</span><span class="lang-en">Hyperspectral Camera PoC</span></a>
+                                <a href="project-ocean-observation.html" class="related-link disabled">
+                                    <span class="link-title"><span class="lang-ja">海洋観測システム実証実験</span><span class="lang-en">Ocean Observation System PoC</span></span>
+                                    <span class="link-status">Coming Soon</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="related-section">
+                            <h4><span class="lang-ja">その他の事業</span><span class="lang-en">Other Services</span></h4>
+                            <div class="related-items">
+                                <a href="environment-detail.html" class="related-link"><span class="lang-ja">実証実験環境・体制整備</span><span class="lang-en">PoC Environment & Infrastructure</span></a>
+                                <a href="event-detail.html" class="related-link"><span class="lang-ja">スタートアップ誘致イベント</span><span class="lang-en">Startup Attraction Events</span></a>
+                                <a href="community-detail.html" class="related-link"><span class="lang-ja">コミュニティ運営</span><span class="lang-en">Community Management</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-buttons">
+                    <a href="https://forms.gle/ndo8gJfLiSaXxQmV7" class="btn btn-primary" target="_blank" rel="noopener noreferrer"><span class="lang-ja">新規事業支援について相談する</span><span class="lang-en">Inquire About Business Development</span></a>
+                    <a href="index.html#business" class="btn btn-secondary"><span class="lang-ja">他のサービスを見る</span><span class="lang-en">View Other Services</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="一般社団法人D&T" class="footer-logo-img">
+                </div>
+                <nav class="footer-nav">
+                    <a href="index.html#home"><span class="lang-ja">トップページ</span><span class="lang-en">Home</span></a>
+                    <a href="index.html#business"><span class="lang-ja">事業説明</span><span class="lang-en">Business</span></a>
+                    <a href="index.html#events"><span class="lang-ja">イベント一覧</span><span class="lang-en">Events</span></a>
+                    <a href="index.html#about"><span class="lang-ja">団体について</span><span class="lang-en">About</span></a>
+                    <a href="index.html#membership"><span class="lang-ja">会員・サポーター</span><span class="lang-en">Membership</span></a>
+                    <a href="index.html#contact"><span class="lang-ja">お問い合わせ</span><span class="lang-en">Contact</span></a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span class="lang-ja">一般社団法人D&T</span><span class="lang-en">D&T Association</span> All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ハンバーガーメニューの動作
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // 言語切り替え機能
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const currentLang = html.getAttribute('lang');
+            const newLang = currentLang === 'ja' ? 'en' : 'ja';
+            html.setAttribute('lang', newLang);
+
+            // 言語設定をlocalStorageに保存
+            localStorage.setItem('preferredLanguage', newLang);
+        }
+
+        // ページ読み込み時に保存された言語設定を適用
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang) {
+                document.documentElement.setAttribute('lang', savedLang);
+            }
+        });
+
+        // 背景画像のカーソル連動動作
+        document.addEventListener('mousemove', function(e) {
+            const main = document.querySelector('main');
+            if (main) {
+                const x = (e.clientX / window.innerWidth) * 100;
+                const y = (e.clientY / window.innerHeight) * 100;
+
+                const offsetX = (x - 50) * 0.1;
+                const offsetY = (y - 50) * 0.1;
+
+                main.style.backgroundPosition = `${50 + offsetX}% ${50 + offsetY}%`;
+            }
+        });
+    </script>
+</body>
+</html>

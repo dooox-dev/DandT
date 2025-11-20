@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一般社団法人D&T - 世界の夢と日立の技術で世界的イノベーションを創造する</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #0066cc;
+            border-radius: 25px;
+            padding: 8px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            color: #0066cc;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .lang-switch:hover {
+            background: #0066cc;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+        }
+
+        .lang-ja, .lang-en {
+            transition: opacity 0.3s ease;
+        }
+
+        html[lang="en"] .lang-ja {
+            display: none;
+        }
+
+        html[lang="ja"] .lang-en {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 言語切り替えボタン -->
+    <button class="lang-switch" onclick="toggleLanguage()">
+        <span class="lang-ja">English</span>
+        <span class="lang-en">日本語</span>
+    </button>
+
+
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="images/logo.png" alt="一般社団法人D&T" class="logo-img">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home"><span class="lang-ja">トップページ</span><span class="lang-en">Home</span></a></li>
+                    <li><a href="#business"><span class="lang-ja">事業説明</span><span class="lang-en">Business</span></a></li>
+                    <li><a href="#events"><span class="lang-ja">イベント一覧</span><span class="lang-en">Events</span></a></li>
+                    <li><a href="#about"><span class="lang-ja">団体について</span><span class="lang-en">About</span></a></li>
+                    <li><a href="#membership"><span class="lang-ja">会員・サポーター</span><span class="lang-en">Membership</span></a></li>
+                    <li><a href="#contact" class="nav-cta"><span class="lang-ja">お問い合わせ</span><span class="lang-en">Contact</span></a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 背景動画 -->
+        <div class="background-video-container">
+            <video class="background-video" autoplay muted loop playsinline preload="metadata">
+                <source src="images/background-video.mp4" type="video/mp4">
+                <!-- フォールバック用静止画 -->
+                <img src="images/supporter.jpg" alt="Background" class="fallback-image">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        
+        <!-- ヒーローセクション -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="lang-ja">世界の夢と日立の技術で<br>世界的イノベーションを創造する</span>
+                        <span class="lang-en">Creating Global Innovation<br>with Dreams and Hitachi's Technology</span>
+                    </h1>
+                    <p class="hero-description">
+                        <span class="lang-ja">日立市が持つ資産（技術・自然・人）と、国内外のスタートアップが持つ力（夢・アイデア）を掛け合わせ、世界に通用するイノベーションを創出する拠点となることを目指す団体です。</span>
+                        <span class="lang-en">We aim to become an innovation hub by combining Hitachi City's assets (technology, nature, people) with the power of startups worldwide (dreams and ideas).</span>
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="https://forms.gle/ndo8gJfLiSaXxQmV7" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            <span class="lang-ja">会員登録・お問い合わせはこちら</span>
+                            <span class="lang-en">Register or Contact Us</span>
+                        </a>
+                        <a href="#business" class="btn btn-secondary">
+                            <span class="lang-ja">私たちの構想はこちら</span>
+                            <span class="lang-en">Our Vision</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/hero-image.jpg" alt="日立市の風景とイノベーション" class="hero-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- 事業説明セクション -->
+        <section id="business" class="business">
+            <div class="container">
+                <div class="section-header">
+                    <h2><span class="lang-ja">一般社団法人D&T　事業詳細</span><span class="lang-en">D&T Services Overview</span></h2>
+                </div>
+
+                <div class="business-services">
+                    <h3><span class="lang-ja">主な事業内容</span><span class="lang-en">Main Services</span></h3>
+                    <div class="services-grid">
+                        <div class="service-card" onclick="location.href='environment-detail.html'" style="cursor: pointer;">
+                            <div class="service-icon">
+                                <img src="images/service-1.jpg" alt="実証実験">
+                            </div>
+                            <h4><span class="lang-ja">実証実験の環境・体制整備</span><span class="lang-en">PoC Environment & Infrastructure</span></h4>
+                            <p><span class="lang-ja">日立市で自社の技術をテストする環境の整備や、地元企業との技術連携を生み出し、スタートアップの実証実験を加速させます。</span><span class="lang-en">We provide testing environments and facilitate partnerships with local businesses to accelerate startup PoC initiatives.</span></p>
+                            <div class="service-link"><span class="lang-ja">詳細を見る →</span><span class="lang-en">Learn More →</span></div>
+                        </div>
+                        <div class="service-card" onclick="location.href='event-detail.html'" style="cursor: pointer;">
+                            <div class="service-icon">
+                                <img src="images/service-2.jpg" alt="イベント開催">
+                            </div>
+                            <h4><span class="lang-ja">スタートアップ誘致イベントの開催</span><span class="lang-en">Startup Attraction Events</span></h4>
+                            <p><span class="lang-ja">国内外のスタートアップを対象に、日立市の魅力や技術に触れる視察イベントや、関係者との交流会を企画・開催します。</span><span class="lang-en">We organize site visits and networking events for startups to experience Hitachi City's appeal and technology.</span></p>
+                            <div class="service-link"><span class="lang-ja">詳細を見る →</span><span class="lang-en">Learn More →</span></div>
+                        </div>
+                        <div class="service-card" onclick="location.href='business-development-detail.html'" style="cursor: pointer;">
+                            <div class="service-icon">
+                                <img src="images/service-3.jpg" alt="新規事業創出">
+                            </div>
+                            <h4><span class="lang-ja">新規事業の創出支援</span><span class="lang-en">New Business Development</span></h4>
+                            <p><span class="lang-ja">日立市の企業が持つ技術・スキルをさらに向上させ、新たな事業を展開できるよう、専門家や他企業との連携を推進します。</span><span class="lang-en">We support local companies in developing new businesses by connecting them with experts and partner organizations.</span></p>
+                            <div class="service-link"><span class="lang-ja">詳細を見る →</span><span class="lang-en">Learn More →</span></div>
+                        </div>
+                        <div class="service-card" onclick="location.href='community-detail.html'" style="cursor: pointer;">
+                            <div class="service-icon">
+                                <img src="images/service-4.jpg" alt="コミュニティ運営">
+                            </div>
+                            <h4><span class="lang-ja">D&T会員</span><span class="lang-en">D&T Membership</span></h4>
+                            <p><span class="lang-ja">当法人の会員制コミュニティ「D&T会員」を設置し、日立市関係者とスタートアップとの継続的な交流・連携を促進するコミュニティを運営します。</span><span class="lang-en">We operate a membership community to foster ongoing collaboration between Hitachi City stakeholders and startups.</span></p>
+                            <div class="service-link"><span class="lang-ja">詳細を見る →</span><span class="lang-en">Learn More →</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projects">
+                    <h3><span class="lang-ja">進行中のプロジェクト</span><span class="lang-en">Ongoing Projects</span></h3>
+                    <div class="project-list">
+                        <div class="project-item" onclick="location.href='project-hyperspectral.html'" style="cursor: pointer;">
+                            <img src="images/project-1.jpg" alt="ハイパースペクトルカメラ">
+                            <div class="project-content">
+                                <h4><span class="lang-ja">ハイパースペクトルカメラを用いたアミロイドβ検出に関する実証実験</span><span class="lang-en">Amyloid-β Detection PoC Using Hyperspectral Camera</span></h4>
+                                <p><span class="lang-ja">最新の光学技術を活用した医療分野でのイノベーション創出を目指します。</span><span class="lang-en">Aiming to create healthcare innovation using advanced optical technology.</span></p>
+                                <div class="service-link"><span class="lang-ja">詳細を見る →</span><span class="lang-en">Learn More →</span></div>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <img src="images/project-2.jpg" alt="海洋観測システム">
+                            <div class="project-content">
+                                <h4><span class="lang-ja">定置網を用いた海洋観測システムの実証実験</span><span class="lang-en">Ocean Observation System PoC Using Set Nets</span></h4>
+                                <p><span class="lang-ja">Coming Soon - 詳細は近日公開予定です。</span><span class="lang-en">Coming Soon - Details will be available shortly.</span></p>
+                                <div class="service-link coming-soon">Coming Soon</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- イベント一覧 -->
+        <section id="events" class="events">
+            <div class="container">
+                <div class="section-header">
+                    <h2><span class="lang-ja">イベント一覧</span><span class="lang-en">Events</span></h2>
+                </div>
+
+                <div class="events-content">
+                    <div class="event-categories">
+                        <div class="category-tab active" data-category="upcoming"><span class="lang-ja">予定中のイベント</span><span class="lang-en">Upcoming Events</span></div>
+                    </div>
+
+                    <div class="events-list">
+                        <!-- 予定中のイベント -->
+                        <div class="event-category" data-category="upcoming">
+                            <div class="event-card">
+                                <div class="event-date">
+                                    <span class="month">10</span>
+                                    <span class="day">15</span>
+                                    <span class="year">2025</span>
+                                </div>
+                                <div class="event-content">
+                                    <h3><span class="lang-ja">インドスタートアップ × 日立市企業 交流会</span><span class="lang-en">India Startup × Hitachi City Networking Event</span></h3>
+                                    <p class="event-description"><span class="lang-ja">インドの有力スタートアップが日立市を訪問し、地元企業との技術交流およびビジネスマッチングを行います。最新のテクノロジーと日立市の伝統的な技術力の融合を目指すイベントです。</span><span class="lang-en">Leading Indian startups visit Hitachi City for tech exchange and business matching with local companies, aiming to merge cutting-edge technology with Hitachi's traditional expertise.</span></p>
+                                    <div class="event-details">
+                                        <div class="event-location">
+                                            <span class="detail-label"><span class="lang-ja">場所:</span><span class="lang-en">Venue:</span></span>
+                                            <span><span class="lang-ja">日立市内（詳細は後日連絡）</span><span class="lang-en">Hitachi City (details TBA)</span></span>
+                                        </div>
+                                        <div class="event-time">
+                                            <span class="detail-label"><span class="lang-ja">時間:</span><span class="lang-en">Time:</span></span>
+                                            <span>13:00 - 17:00</span>
+                                        </div>
+                                    </div>
+                                    <div class="event-tags">
+                                        <span class="tag"><span class="lang-ja">国際交流</span><span class="lang-en">International</span></span>
+                                        <span class="tag"><span class="lang-ja">ビジネスマッチング</span><span class="lang-en">Matching</span></span>
+                                        <span class="tag"><span class="lang-ja">テクノロジー</span><span class="lang-en">Tech</span></span>
+                                    </div>
+                                </div>
+                                <div class="event-status upcoming">
+                                    <span><span class="lang-ja">開催予定</span><span class="lang-en">Upcoming</span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="events-cta">
+                        <p><span class="lang-ja">イベントの詳細情報や参加申し込みについては、お問い合わせください。</span><span class="lang-en">For event details or registration, please contact us.</span></p>
+                        <a href="https://forms.gle/ndo8gJfLiSaXxQmV7" class="btn btn-primary" target="_blank" rel="noopener noreferrer"><span class="lang-ja">イベント参加について問い合わせる</span><span class="lang-en">Inquire About Event Participation</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 団体について -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2><span class="lang-ja">一般社団法人D&T 体制</span><span class="lang-en">D&T Organization</span></h2>
+                    <p class="section-subtitle"><span class="lang-ja">一般社団法人D&Tのビジョンとメンバー</span><span class="lang-en">Vision and Members of D&T Association</span></p>
+                </div>
+
+                <div class="about-content">
+                    <div class="representative-message">
+                        <h3><span class="lang-ja">代表理事挨拶</span><span class="lang-en">Message from Director</span></h3>
+                        <div class="message-content">
+                            <div class="message-text">
+                                <p><span class="lang-ja">私たちが活動の拠点とする茨城県日立市は、素晴らしい技術と歴史を持つ街です。しかし、時代の変化とともに新たな課題も生まれています。『一般社団法人D&T』は、この課題解決の一翼を担うべく、『Dream(夢)』と『Technology(技術)』の力を融合させ、日立市の未来を切り拓くために設立されました。スタートアップ企業を積極的に誘致し、実証実験を行いやすい環境を整備することで、新たな事業や雇用を創出し、地域経済の活性化に貢献してまいります。地元企業や行政、そして市民の皆様との連携を深め、日立市が持つポテンシャルを最大限に引き出し、新たなイノベーションが次々と生まれる活気ある街にしていく所存です。皆様のご支援とご協力を心よりお願い申し上げます。</span><span class="lang-en">Hitachi City has remarkable technology and history, yet faces new challenges. D&T was established to merge Dreams and Technology, paving the way for Hitachi's future. By attracting startups and providing PoC environments, we create businesses, jobs, and revitalize the local economy. We collaborate with local companies, government, and citizens to maximize Hitachi's potential and foster continuous innovation. We appreciate your support.</span></p>
+                                <p><strong><span class="lang-ja">代表理事　工藤政幸（SUNKING 代表）</span><span class="lang-en">Director: Masayuki Kudo (SUNKING)</span></strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="board-members">
+                        <h3><span class="lang-ja">理事紹介</span><span class="lang-en">Board Members</span></h3>
+                        <div class="members-grid">
+                            <div class="member-item">
+                                <div class="member-role"><span class="lang-ja">理事</span><span class="lang-en">Director</span></div>
+                                <div class="member-details">
+                                    <h4><span class="lang-ja">皆川 浩章</span><span class="lang-en">Hiroaki Minagawa</span></h4>
+                                    <p><span class="lang-ja">株式会社NTC</span><span class="lang-en">NTC Corporation</span></p>
+                                </div>
+                            </div>
+                            <div class="member-item">
+                                <div class="member-role"><span class="lang-ja">理事</span><span class="lang-en">Director</span></div>
+                                <div class="member-details">
+                                    <h4><span class="lang-ja">小野瀬 湧太</span><span class="lang-en">Yuta Onose</span></h4>
+                                    <p><span class="lang-ja">株式会社小野瀬製作所</span><span class="lang-en">Onose Seisakusho</span></p>
+                                </div>
+                            </div>
+                            <div class="member-item">
+                                <div class="member-role"><span class="lang-ja">理事</span><span class="lang-en">Director</span></div>
+                                <div class="member-details">
+                                    <h4><span class="lang-ja">中矢 大輝</span><span class="lang-en">Daiki Nakaya</span></h4>
+                                    <p><span class="lang-ja">Milk.株式会社</span><span class="lang-en">Milk. Inc.</span></p>
+                                </div>
+                            </div>
+                            <div class="member-item">
+                                <div class="member-role"><span class="lang-ja">理事</span><span class="lang-en">Director</span></div>
+                                <div class="member-details">
+                                    <h4><span class="lang-ja">久保寺 亮介</span><span class="lang-en">Ryosuke Kubodera</span></h4>
+                                    <p><span class="lang-ja">株式会社Dooox</span><span class="lang-en">Dooox Corporation</span></p>
+                                </div>
+                            </div>
+                            <div class="member-item">
+                                <div class="member-role"><span class="lang-ja">監事</span><span class="lang-en">Auditor</span></div>
+                                <div class="member-details">
+                                    <h4><span class="lang-ja">海野 卓哉</span><span class="lang-en">Takuya Unno</span></h4>
+                                    <p><span class="lang-ja">合資会社升屋酒造店</span><span class="lang-en">Masuya Brewery</span></p>
+                                </div>
+                            </div>
+                            <div class="member-item">
+                                <div class="member-role"><span class="lang-ja">監事</span><span class="lang-en">Auditor</span></div>
+                                <div class="member-details">
+                                    <h4><span class="lang-ja">宮本 春樹</span><span class="lang-en">Haruki Miyamoto</span></h4>
+                                    <p><span class="lang-ja">日本未来産業株式会社</span><span class="lang-en">Japan Future Industry</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="organization-info">
+                        <h3><span class="lang-ja">法人概要</span><span class="lang-en">Organization Overview</span></h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <strong><span class="lang-ja">法人名</span><span class="lang-en">Name</span></strong>
+                                <span><span class="lang-ja">一般社団法人D&T</span><span class="lang-en">D&T Association</span></span>
+                            </div>
+                            <div class="info-item">
+                                <strong><span class="lang-ja">設立日</span><span class="lang-en">Established</span></strong>
+                                <span><span class="lang-ja">2025年7月</span><span class="lang-en">July 2025</span></span>
+                            </div>
+                            <div class="info-item">
+                                <strong><span class="lang-ja">所在地</span><span class="lang-en">Location</span></strong>
+                                <span><span class="lang-ja">茨城県日立市滑川本町1-22-1</span><span class="lang-en">1-22-1 Namekawa-honcho, Hitachi City, Ibaraki</span></span>
+                            </div>
+                            <div class="info-item">
+                                <strong><span class="lang-ja">役員構成</span><span class="lang-en">Board</span></strong>
+                                <span><span class="lang-ja">代表理事1名、理事4名、監事2名</span><span class="lang-en">1 Representative Director, 4 Directors, 2 Auditors</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 会員・サポーター -->
+        <section id="membership" class="membership">
+            <div class="container">
+                <div class="section-header">
+                    <h2><span class="lang-ja">会員・サポーターについて</span><span class="lang-en">Membership & Support</span></h2>
+                </div>
+
+                <div class="membership-overview">
+                    <p><span class="lang-ja">私たちの理念に共感し、日立市でのイノベーション創出を共に目指す「会員」を募集しています。多様な関係者との協業を通じて、新たな事業創出や技術成長を目指しましょう。</span><span class="lang-en">We seek members who share our vision to create innovation in Hitachi City. Let's collaborate with diverse stakeholders to develop new businesses and advance technology.</span></p>
+                </div>
+
+                <div class="membership-types">
+                    <div class="membership-card">
+                        <div class="card-header standard">
+                            <h3><span class="lang-ja">スタンダード会員</span><span class="lang-en">Standard Membership</span></h3>
+                            <p class="target"><span class="lang-ja">アイデア・技術のマッチングや実証実験を希望しているスタートアップや地元企業向け</span><span class="lang-en">For startups and local companies seeking idea/tech matching and PoC opportunities</span></p>
+                        </div>
+                        <div class="card-image">
+                            <img src="images/dream-member.jpg" alt="スタンダード会員">
+                        </div>
+                    </div>
+
+                    <div class="membership-card">
+                        <div class="card-header premium">
+                            <h3><span class="lang-ja">プレミアム会員</span><span class="lang-en">Premium Membership</span></h3>
+                            <p class="target"><span class="lang-ja">特定の協業プロジェクトや本格的な資金調達など高度な支援を求める企業向け</span><span class="lang-en">For companies seeking advanced support like specific collaboration projects and fundraising</span></p>
+                        </div>
+                        <div class="card-image">
+                            <img src="images/technology-member.jpg" alt="プレミアム会員">
+                        </div>
+                    </div>
+
+                    <div class="membership-card">
+                        <div class="card-header cloud">
+                            <h3><span class="lang-ja">クラウド会員</span><span class="lang-en">Cloud Membership</span></h3>
+                            <p class="target"><span class="lang-ja">日立市周辺地域に拠点を置き、一般社団法人D&Tの取り組みに協力的な方向け</span><span class="lang-en">For individuals and organizations in the Hitachi area willing to support D&T initiatives</span></p>
+                        </div>
+                        <div class="card-image">
+                            <img src="images/cloud-member.jpg" alt="クラウド会員">
+                        </div>
+                    </div>
+
+                    <div class="membership-card">
+                        <div class="card-header supporter">
+                            <h3><span class="lang-ja">ANDサポーター</span><span class="lang-en">AND Supporter</span></h3>
+                            <p class="target"><span class="lang-ja">D&Tの理念にご賛同いただける公的機関や支援組織（地域自治体、大学、VCなど）向け</span><span class="lang-en">For public institutions and support organizations (municipalities, universities, VCs) aligned with D&T</span></p>
+                        </div>
+                        <div class="card-image">
+                            <img src="images/supporter.jpg" alt="ANDサポーター">
+                        </div>
+                    </div>
+
+                    <div class="membership-cta">
+                        <a href="community-detail.html" class="btn btn-primary"><span class="lang-ja">D&T会員の詳細はこちら</span><span class="lang-en">Learn More About D&T Membership</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- お問い合わせ -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2><span class="lang-ja">お問い合わせ</span><span class="lang-en">Contact</span></h2>
+                    <p class="section-subtitle"><span class="lang-ja">ご質問やご相談など、お気軽にお問い合わせください</span><span class="lang-en">Feel free to contact us with questions or inquiries</span></p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3><span class="lang-ja">お問い合わせ内容</span><span class="lang-en">Inquiry Topics</span></h3>
+                        <ul class="contact-types">
+                            <li><span class="lang-ja">スタンダード会員への入会について</span><span class="lang-en">Standard Membership</span></li>
+                            <li><span class="lang-ja">プレミアム会員への入会について</span><span class="lang-en">Premium Membership</span></li>
+                            <li><span class="lang-ja">クラウド会員への入会について</span><span class="lang-en">Cloud Membership</span></li>
+                            <li><span class="lang-ja">ANDサポーターについて</span><span class="lang-en">AND Supporter</span></li>
+                            <li><span class="lang-ja">事業に関するお問い合わせ</span><span class="lang-en">Business Inquiries</span></li>
+                            <li><span class="lang-ja">その他</span><span class="lang-en">Other</span></li>
+                        </ul>
+                    </div>
+                    <div class="contact-form">
+                        <div class="form-placeholder">
+                            <h3><span class="lang-ja">お問い合わせフォーム</span><span class="lang-en">Contact Form</span></h3>
+                            <a href="https://forms.gle/ndo8gJfLiSaXxQmV7" class="btn btn-primary google-form-btn" target="_blank" rel="noopener noreferrer"><span class="lang-ja">お問い合わせはこちら</span><span class="lang-en">Contact Us</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="一般社団法人D&T" class="footer-logo-img">
+                </div>
+                <nav class="footer-nav">
+                    <a href="#home"><span class="lang-ja">トップページ</span><span class="lang-en">Home</span></a>
+                    <a href="#business"><span class="lang-ja">事業説明</span><span class="lang-en">Business</span></a>
+                    <a href="#events"><span class="lang-ja">イベント一覧</span><span class="lang-en">Events</span></a>
+                    <a href="#about"><span class="lang-ja">団体について</span><span class="lang-en">About</span></a>
+                    <a href="#membership"><span class="lang-ja">会員・サポーター</span><span class="lang-en">Membership</span></a>
+                    <a href="#contact"><span class="lang-ja">お問い合わせ</span><span class="lang-en">Contact</span></a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span class="lang-ja">一般社団法人D&T</span><span class="lang-en">D&T Association</span> All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ハンバーガーメニューの動作
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ナビゲーションのアクティブ状態
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+
+        // 背景は固定（マウス連動効果なし）
+        // document.addEventListener('mousemove', function(e) {
+        //     // 背景動画を固定するためコメントアウト
+        // });
+
+        // スクロール時のヘッダー効果のみ
+        let ticking = false;
+        
+        function updateHeader() {
+            const scrollTop = window.pageYOffset;
+
+            // ヘッダーの背景透明度調整
+            const header = document.querySelector('header');
+            if (header && scrollTop > 50) {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else if (header) {
+                header.style.backgroundColor = 'var(--white)';
+                header.style.backdropFilter = 'none';
+            }
+            
+            ticking = false;
+        }
+
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateHeader);
+                ticking = true;
+            }
+        }
+
+        document.addEventListener('scroll', requestTick);
+
+        // スクロール時アニメーション
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -100px 0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // 初期化時にアニメーション要素を設定
+        document.addEventListener('DOMContentLoaded', () => {
+            // サービスセクションの要素
+            const serviceCards = document.querySelectorAll('#business .service-card');
+            serviceCards.forEach((card, index) => {
+                card.classList.add('slide-in-up');
+                card.style.transitionDelay = `${index * 0.1}s`;
+                observer.observe(card);
+            });
+
+            // プロジェクトセクションの要素
+            const projectItems = document.querySelectorAll('#events .project-item');
+            projectItems.forEach((item, index) => {
+                item.classList.add('slide-in-left');
+                item.style.transitionDelay = `${index * 0.2}s`;
+                observer.observe(item);
+            });
+
+            // その他のセクション
+            const sections = document.querySelectorAll('#about, #membership, #contact');
+            sections.forEach(section => {
+                section.classList.add('fade-in-on-scroll');
+                observer.observe(section);
+            });
+
+            // ページ読み込み時に保存された言語設定を適用
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang) {
+                document.documentElement.setAttribute('lang', savedLang);
+            }
+        });
+
+        // 言語切り替え機能
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const currentLang = html.getAttribute('lang');
+            const newLang = currentLang === 'ja' ? 'en' : 'ja';
+            html.setAttribute('lang', newLang);
+
+            // 言語設定をlocalStorageに保存
+            localStorage.setItem('preferredLanguage', newLang);
+        }
+    </script>
+</body>
+</html>
