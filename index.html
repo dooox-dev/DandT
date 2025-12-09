@@ -42,6 +42,16 @@
         html[lang="ja"] .lang-en {
             display: none;
         }
+
+        /* モバイル対応 - ハンバーガーメニューと重ならないように */
+        @media (max-width: 768px) {
+            .lang-switch {
+                top: 15px;
+                right: 15px;
+                padding: 6px 15px;
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -95,18 +105,18 @@
                         <span class="lang-en">Creating Global Innovation<br>with Dreams and Hitachi's Technology</span>
                     </h1>
                     <p class="hero-description">
-                        <span class="lang-ja">日立市が持つ資産（技術・自然・人）と、国内外のスタートアップが持つ力（夢・アイデア）を掛け合わせ、世界に通用するイノベーションを創出する拠点となることを目指す団体です。</span>
-                        <span class="lang-en">We aim to become an innovation hub by combining Hitachi City's assets (technology, nature, people) with the power of startups worldwide (dreams and ideas).</span>
+                        <span class="lang-ja">日立市が持つ資産（技術・自然・人）と、国内外のスタートアップが持つ力（夢・アイデア）を掛け合わせ、世界に通用するイノベーションを創出する拠点となることを目指す団体です。世界中の技術を日立市に集約し、スペースポートを建設し、日立市を『世界の入り口』へと変える『HITACHI ドリーム・テクノロジー構想』の実現に挑戦します。</span>
+                        <span class="lang-en">We aim to become an innovation hub by combining Hitachi City's assets (technology, nature, people) with the power of startups worldwide (dreams and ideas). We strive to realize the "HITACHI Dream Technology Vision" by gathering global technologies in Hitachi City, building a spaceport, and transforming the city into a gateway to the world.</span>
                     </p>
                     <div class="hero-buttons">
                         <a href="https://forms.gle/ndo8gJfLiSaXxQmV7" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                             <span class="lang-ja">会員登録・お問い合わせはこちら</span>
                             <span class="lang-en">Register or Contact Us</span>
                         </a>
-                        <a href="#business" class="btn btn-secondary">
+                        <button onclick="openVideoModal()" class="btn btn-secondary">
                             <span class="lang-ja">私たちの構想はこちら</span>
                             <span class="lang-en">Our Vision</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -120,6 +130,10 @@
             <div class="container">
                 <div class="section-header">
                     <h2><span class="lang-ja">一般社団法人D&T　事業詳細</span><span class="lang-en">D&T Services Overview</span></h2>
+                    <p class="section-subtitle" style="margin-top: 20px; font-size: 1.1rem; line-height: 1.8;">
+                        <span class="lang-ja">日立市から世界へ飛び立つ宇宙港「スペースポートHITACHI」と、世界中の技術を結集した街づくり「スペースシティHITACHI」。この2つの実現に向け、以下の事業を行います。</span>
+                        <span class="lang-en">We pursue two visions: "Spaceport HITACHI" - a gateway to space from Hitachi City, and "Space City HITACHI" - an urban development bringing together global technologies. We conduct the following initiatives to realize these goals.</span>
+                    </p>
                 </div>
 
                 <div class="business-services">
@@ -200,6 +214,9 @@
                         <!-- 予定中のイベント -->
                         <div class="event-category" data-category="upcoming">
                             <div class="event-card">
+                                <div class="event-image">
+                                    <img src="images/india-event-1.jpg" alt="インドスタートアップ交流会" style="width: 250px; height: 100%; object-fit: cover;">
+                                </div>
                                 <div class="event-date">
                                     <span class="month">10</span>
                                     <span class="day">15</span>
@@ -223,9 +240,12 @@
                                         <span class="tag"><span class="lang-ja">ビジネスマッチング</span><span class="lang-en">Matching</span></span>
                                         <span class="tag"><span class="lang-ja">テクノロジー</span><span class="lang-en">Tech</span></span>
                                     </div>
+                                    <div style="margin-top: 20px;">
+                                        <a href="event-case-india.html" class="btn btn-secondary" style="display: inline-block;"><span class="lang-ja">イベント事例を見る</span><span class="lang-en">View Event Case</span></a>
+                                    </div>
                                 </div>
-                                <div class="event-status upcoming">
-                                    <span><span class="lang-ja">開催予定</span><span class="lang-en">Upcoming</span></span>
+                                <div class="event-status completed">
+                                    <span><span class="lang-ja">実施終了</span><span class="lang-en">Completed</span></span>
                                 </div>
                             </div>
                         </div>
@@ -422,6 +442,20 @@
         </section>
     </main>
 
+    <!-- ビデオモーダル -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="video-modal-close" onclick="closeVideoModal()">&times;</span>
+            <div class="video-container">
+                <video id="modalVideo" controls>
+                    <source src="images/vision-video.mp4" type="video/mp4">
+                    <span class="lang-ja">お使いのブラウザは動画タグをサポートしていません。</span>
+                    <span class="lang-en">Your browser does not support the video tag.</span>
+                </video>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-container">
             <div class="footer-content">
@@ -579,6 +613,42 @@
             // 言語設定をlocalStorageに保存
             localStorage.setItem('preferredLanguage', newLang);
         }
+
+        // ビデオモーダル機能
+        function openVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const video = document.getElementById('modalVideo');
+            modal.style.display = 'flex';
+            video.play();
+            document.body.style.overflow = 'hidden'; // 背景のスクロールを無効化
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const video = document.getElementById('modalVideo');
+            modal.style.display = 'none';
+            video.pause();
+            video.currentTime = 0; // 動画を最初に戻す
+            document.body.style.overflow = 'auto'; // スクロールを再度有効化
+        }
+
+        // モーダルの外側をクリックしても閉じる
+        window.onclick = function(event) {
+            const modal = document.getElementById('videoModal');
+            if (event.target === modal) {
+                closeVideoModal();
+            }
+        }
+
+        // Escキーでモーダルを閉じる
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modal = document.getElementById('videoModal');
+                if (modal.style.display === 'flex') {
+                    closeVideoModal();
+                }
+            }
+        });
     </script>
 </body>
 </html>

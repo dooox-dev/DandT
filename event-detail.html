@@ -42,6 +42,15 @@
         html[lang="ja"] .lang-en {
             display: none;
         }
+
+        /* モバイル対応 - ハンバーガーメニューと重ならないように */
+        @media (max-width: 768px) {
+            .lang-switch {
+                top: 20px;
+                left: 20px;
+                right: auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -158,6 +167,29 @@
                     </div>
                 </div>
 
+
+                <div class="content-section">
+                    <h2><span class="lang-ja">イベント事例</span><span class="lang-en">Event Cases</span></h2>
+                    <div class="project-examples">
+                        <div class="project-example">
+                            <div class="project-image">
+                                <img src="images/event-india.jpg" alt="インドスタートアップ交流会">
+                            </div>
+                            <div class="project-details">
+                                <h3><span class="lang-ja">インドスタートアップ × 日立市企業 交流会</span><span class="lang-en">India Startup × Hitachi City Networking Event</span></h3>
+                                <p class="lang-ja">インドのスタートアップ企業と日立市の地元企業が一堂に会し、技術交流とビジネスマッチングを行いました。</p>
+                                <p class="lang-en">Indian startups and Hitachi City local companies gathered for technology exchange and business matching.</p>
+                                <div class="project-status">
+                                    <span class="status-badge completed"><span class="lang-ja">実施終了</span><span class="lang-en">Completed</span></span>
+                                    <span class="project-timeline"><span class="lang-ja">2024年10月15日</span><span class="lang-en">Oct 15, 2024</span></span>
+                                </div>
+                                <div style="margin-top: 20px;">
+                                    <a href="event-case-india.html" class="btn btn-secondary"><span class="lang-ja">詳細を見る</span><span class="lang-en">View Details</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="content-section">
                     <h2><span class="lang-ja">対象企業について</span><span class="lang-en">Target Companies</span></h2>

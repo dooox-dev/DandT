@@ -42,6 +42,15 @@
         html[lang="ja"] .lang-en {
             display: none;
         }
+
+        /* モバイル対応 - ハンバーガーメニューと重ならないように */
+        @media (max-width: 768px) {
+            .lang-switch {
+                top: 20px;
+                left: 20px;
+                right: auto;
+            }
+        }
     </style>
 </head>
 <body>
