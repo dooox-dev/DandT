@@ -881,9 +881,9 @@ header {
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none; /* Firefox */
         gap: 20px;
-        padding: 0 20px 20px 20px;
-        margin-left: -20px;
-        margin-right: -20px;
+        padding: 20px;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .services-grid::-webkit-scrollbar {
@@ -891,9 +891,10 @@ header {
     }
 
     .services-grid .service-card {
-        flex: 0 0 85%;
+        flex: 0 0 calc(100% - 80px);
         scroll-snap-align: center;
-        max-width: 350px;
+        max-width: 320px;
+        min-width: 280px;
     }
 }
 
@@ -985,6 +986,34 @@ header {
 .project-list {
     display: grid;
     gap: 30px;
+}
+
+/* スマホ用プロジェクトリストスワイプ */
+@media (max-width: 768px) {
+    .project-list {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 20px;
+        padding: 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .project-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .project-list .project-item {
+        flex: 0 0 calc(100% - 80px);
+        scroll-snap-align: center;
+        max-width: 340px;
+        min-width: 280px;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 }
 
 .project-item {
@@ -1132,8 +1161,8 @@ header {
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         gap: 15px;
-        margin: 0 -20px 60px -20px;
-        padding: 0 20px 20px 20px;
+        margin: 0 0 60px 0;
+        padding: 20px;
     }
 
     .members-grid::-webkit-scrollbar {
@@ -1141,9 +1170,10 @@ header {
     }
 
     .members-grid .member-item {
-        flex: 0 0 80%;
+        flex: 0 0 calc(100% - 100px);
         scroll-snap-align: center;
         max-width: 300px;
+        min-width: 260px;
         margin-bottom: 0;
     }
 }
@@ -1261,7 +1291,9 @@ header {
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         gap: 20px;
-        padding: 40px 20px;
+        padding: 30px 20px;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .membership-types::-webkit-scrollbar {
@@ -1269,9 +1301,10 @@ header {
     }
 
     .membership-types .membership-card {
-        flex: 0 0 85%;
+        flex: 0 0 calc(100% - 80px);
         scroll-snap-align: center;
-        max-width: 350px;
+        max-width: 320px;
+        min-width: 280px;
     }
 }
 
