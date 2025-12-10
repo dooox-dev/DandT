@@ -872,6 +872,31 @@ header {
     align-items: stretch;
 }
 
+/* スマホ用スワイプ可能コンテナ */
+@media (max-width: 768px) {
+    .services-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        gap: 20px;
+        padding: 0 20px 20px 20px;
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+
+    .services-grid::-webkit-scrollbar {
+        display: none; /* Chrome, Safari */
+    }
+
+    .services-grid .service-card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+        max-width: 350px;
+    }
+}
+
 .service-card {
     background-color: var(--white);
     padding: 32px;
@@ -1098,6 +1123,31 @@ header {
     margin: 0 auto 80px;
 }
 
+/* スマホ用理事グリッドスワイプ */
+@media (max-width: 768px) {
+    .members-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 15px;
+        margin: 0 -20px 60px -20px;
+        padding: 0 20px 20px 20px;
+    }
+
+    .members-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .members-grid .member-item {
+        flex: 0 0 80%;
+        scroll-snap-align: center;
+        max-width: 300px;
+        margin-bottom: 0;
+    }
+}
+
 .member-item {
     display: flex;
     align-items: center;
@@ -1200,6 +1250,29 @@ header {
     padding: 60px 40px;
     border-radius: var(--border-radius-lg);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* スマホ用会員カードスワイプ */
+@media (max-width: 768px) {
+    .membership-types {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 20px;
+        padding: 40px 20px;
+    }
+
+    .membership-types::-webkit-scrollbar {
+        display: none;
+    }
+
+    .membership-types .membership-card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+        max-width: 350px;
+    }
 }
 
 .membership-card {
@@ -2320,6 +2393,56 @@ img[src]:not([src=""])::before {
     display: none;
 }
 
+/* スワイプインジケーター（スクロールバー風） */
+.swipe-indicator {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .swipe-indicator {
+        display: block;
+        position: relative;
+        text-align: center;
+        margin-top: -10px;
+        margin-bottom: 20px;
+        padding: 10px 0;
+    }
+
+    .swipe-hint {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--text-gray);
+        font-size: 0.85rem;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 8px 16px;
+        border-radius: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .swipe-hint::before {
+        content: "←";
+        font-size: 1.2rem;
+        animation: swipeLeft 1.5s ease-in-out infinite;
+    }
+
+    .swipe-hint::after {
+        content: "→";
+        font-size: 1.2rem;
+        animation: swipeRight 1.5s ease-in-out infinite;
+    }
+
+    @keyframes swipeLeft {
+        0%, 100% { transform: translateX(0); opacity: 0.5; }
+        50% { transform: translateX(-5px); opacity: 1; }
+    }
+
+    @keyframes swipeRight {
+        0%, 100% { transform: translateX(0); opacity: 0.5; }
+        50% { transform: translateX(5px); opacity: 1; }
+    }
+}
+
 /* ビデオモーダル */
 .video-modal {
     display: none;
@@ -2390,7 +2513,8 @@ img[src]:not([src=""])::before {
     background: #000;
 }
 
-.video-container video {
+.video-container video,
+.video-container iframe {
     position: absolute;
     top: 0;
     left: 0;

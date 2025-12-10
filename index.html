@@ -138,6 +138,12 @@
 
                 <div class="business-services">
                     <h3><span class="lang-ja">主な事業内容</span><span class="lang-en">Main Services</span></h3>
+                    <div class="swipe-indicator">
+                        <div class="swipe-hint">
+                            <span class="lang-ja">スワイプ</span>
+                            <span class="lang-en">Swipe</span>
+                        </div>
+                    </div>
                     <div class="services-grid">
                         <div class="service-card" onclick="location.href='environment-detail.html'" style="cursor: pointer;">
                             <div class="service-icon">
@@ -281,6 +287,12 @@
 
                     <div class="board-members">
                         <h3><span class="lang-ja">理事紹介</span><span class="lang-en">Board Members</span></h3>
+                        <div class="swipe-indicator">
+                            <div class="swipe-hint">
+                                <span class="lang-ja">スワイプ</span>
+                                <span class="lang-en">Swipe</span>
+                            </div>
+                        </div>
                         <div class="members-grid">
                             <div class="member-item">
                                 <div class="member-role"><span class="lang-ja">理事</span><span class="lang-en">Director</span></div>
@@ -361,6 +373,13 @@
 
                 <div class="membership-overview">
                     <p><span class="lang-ja">私たちの理念に共感し、日立市でのイノベーション創出を共に目指す「会員」を募集しています。多様な関係者との協業を通じて、新たな事業創出や技術成長を目指しましょう。</span><span class="lang-en">We seek members who share our vision to create innovation in Hitachi City. Let's collaborate with diverse stakeholders to develop new businesses and advance technology.</span></p>
+                </div>
+
+                <div class="swipe-indicator">
+                    <div class="swipe-hint">
+                        <span class="lang-ja">スワイプ</span>
+                        <span class="lang-en">Swipe</span>
+                    </div>
                 </div>
 
                 <div class="membership-types">
@@ -447,11 +466,7 @@
         <div class="video-modal-content">
             <span class="video-modal-close" onclick="closeVideoModal()">&times;</span>
             <div class="video-container">
-                <video id="modalVideo" controls>
-                    <source src="images/vision-video.mp4" type="video/mp4">
-                    <span class="lang-ja">お使いのブラウザは動画タグをサポートしていません。</span>
-                    <span class="lang-en">Your browser does not support the video tag.</span>
-                </video>
+                <iframe id="modalVideo" src="https://www.youtube.com/embed/xA2XRelVCSY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -617,18 +632,23 @@
         // ビデオモーダル機能
         function openVideoModal() {
             const modal = document.getElementById('videoModal');
-            const video = document.getElementById('modalVideo');
+            const iframe = document.getElementById('modalVideo');
             modal.style.display = 'flex';
-            video.play();
+            // YouTubeの自動再生を有効にする
+            const src = iframe.src;
+            if (src.indexOf('autoplay=1') === -1) {
+                iframe.src = src + (src.indexOf('?') === -1 ? '?' : '&') + 'autoplay=1';
+            }
             document.body.style.overflow = 'hidden'; // 背景のスクロールを無効化
         }
 
         function closeVideoModal() {
             const modal = document.getElementById('videoModal');
-            const video = document.getElementById('modalVideo');
+            const iframe = document.getElementById('modalVideo');
             modal.style.display = 'none';
-            video.pause();
-            video.currentTime = 0; // 動画を最初に戻す
+            // iframeをリロードして動画を停止
+            const src = iframe.src.replace('&autoplay=1', '').replace('?autoplay=1', '');
+            iframe.src = src;
             document.body.style.overflow = 'auto'; // スクロールを再度有効化
         }
 
