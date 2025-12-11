@@ -2426,6 +2426,64 @@ img[src]:not([src=""])::before {
     display: none;
 }
 
+/* アコーディオン機能 */
+.accordion-section {
+    margin: 20px 0;
+}
+
+.read-more-btn {
+    background: none;
+    border: none;
+    color: var(--primary-red);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px 0;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.read-more-btn:hover {
+    color: var(--light-red);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .read-more-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 12px 20px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        font-size: 1rem;
+    }
+}
+
+.hero-description-short,
+.message-short {
+    margin-bottom: 0;
+}
+
+.hero-description-full,
+.message-full {
+    margin-top: 15px;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 500px;
+    }
+}
+
 /* スワイプインジケーター（スクロールバー風） */
 .swipe-indicator {
     display: none;

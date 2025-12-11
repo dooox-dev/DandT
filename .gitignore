@@ -1,0 +1,11 @@
+# Large video files
+images/vision-video.mp4
+images/background-video.mp4
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
