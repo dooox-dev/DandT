@@ -134,8 +134,7 @@
                             <span class="lang-en">D&T provides matching services and proof-of-concept fields to enable domestic and international startups to collaborate with Hitachi City businesses and verify their technologies. Leveraging the city's natural environment and industrial infrastructure, we accelerate technology commercialization, promote regional economic vitality, and foster sustainable innovation.</span>
                         </p>
                         <button class="read-more-btn" onclick="toggleAccordion(this)">
-                            <span class="lang-ja">続きを読む ▼</span>
-                            <span class="lang-en">Read More ▼</span>
+                            ▼
                         </button>
                         <p class="overview-full" style="display: none;">
                             <span class="lang-ja">また、国内外の先進技術と地域の課題解決を結びつけることで、実用的で社会に価値をもたらす実証実験の実現を支援し、技術者・研究者・事業者間の有機的な連携体制を構築しています。</span>
@@ -321,10 +320,10 @@
 
             if (isExpanded) {
                 fullContent.style.display = 'none';
-                button.innerHTML = '<span class="lang-ja">続きを読む ▼</span><span class="lang-en">Read More ▼</span>';
+                button.innerHTML = '▼';
             } else {
                 fullContent.style.display = 'block';
-                button.innerHTML = '<span class="lang-ja">閉じる ▲</span><span class="lang-en">Close ▲</span>';
+                button.innerHTML = '▲';
             }
         }
     </script>

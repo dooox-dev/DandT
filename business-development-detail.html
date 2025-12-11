@@ -129,8 +129,7 @@
                             <span class="lang-en">We support matching services to create new business opportunities leveraging Hitachi City companies' technologies and services. Using our network connecting local businesses, startups, research institutions, and investors, we support new business development through market insights, technology trends, partner introductions, and collaboration opportunities.</span>
                         </p>
                         <button class="read-more-btn" onclick="toggleAccordion(this)">
-                            <span class="lang-ja">続きを読む ▼</span>
-                            <span class="lang-en">Read More ▼</span>
+                            ▼
                         </button>
                         <p class="overview-full" style="display: none;">
                             <span class="lang-ja">私たちは事業戦略を策定するのではなく、企業が持つリソースと市場のニーズを繋ぐ架け橋の役割を果たし、新しいビジネスチャンスを提供します。</span>
@@ -274,10 +273,10 @@
 
             if (isExpanded) {
                 fullContent.style.display = 'none';
-                button.innerHTML = '<span class="lang-ja">続きを読む ▼</span><span class="lang-en">Read More ▼</span>';
+                button.innerHTML = '▼';
             } else {
                 fullContent.style.display = 'block';
-                button.innerHTML = '<span class="lang-ja">閉じる ▲</span><span class="lang-en">Close ▲</span>';
+                button.innerHTML = '▲';
             }
         }
 

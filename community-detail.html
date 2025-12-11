@@ -129,8 +129,7 @@
                             <span class="lang-en">We operate an active community centered on the "D&T Membership" system, promoting continuous exchange and collaboration among Hitachi City stakeholders, startups, and various participants. Through four membership categories—Standard, Premium, Crowd, and AND Supporter—we provide an environment where diverse participants learn from each other and drive business opportunities and innovation.</span>
                         </p>
                         <button class="read-more-btn" onclick="toggleAccordion(this)">
-                            <span class="lang-ja">続きを読む ▼</span>
-                            <span class="lang-en">Read More ▼</span>
+                            ▼
                         </button>
                         <p class="overview-full" style="display: none;">
                             <span class="lang-ja">地域の課題解決と技術発展を結びつけ、実践的で社会に価値をもたらすプロジェクトの実現を支援し、参加者間の有機的な連携体制を構築しています。</span>
@@ -152,8 +151,7 @@
                                     <p class="lang-en">Domestic and international startups with innovative technologies, SMEs, and companies exploring new ventures.</p>
                                 </div>
                                 <button class="read-more-btn" onclick="toggleAccordion(this)">
-                                    <span class="lang-ja">詳細を見る ▼</span>
-                                    <span class="lang-en">Details ▼</span>
+                                    ▼
                                 </button>
                                 <div class="member-description" style="display: none;">
                                     <p class="lang-ja">日立市での実証実験やビジネスパートナーとのマッチングを希望する方。</p>
@@ -180,8 +178,7 @@
                                     <p class="lang-en">Growth-stage startups and corporate new venture divisions planning full-scale business development or large-scale PoC in Hitachi City.</p>
                                 </div>
                                 <button class="read-more-btn" onclick="toggleAccordion(this)">
-                                    <span class="lang-ja">詳細を見る ▼</span>
-                                    <span class="lang-en">Details ▼</span>
+                                    ▼
                                 </button>
                                 <div class="member-description" style="display: none;">
                                     <p class="lang-ja">次フェーズの資金調達や投資家とのマッチングを必要としている企業。</p>
@@ -208,8 +205,7 @@
                                     <p class="lang-en">Local businesses, sole proprietors, and agriculture/fishery professionals in the Hitachi region.</p>
                                 </div>
                                 <button class="read-more-btn" onclick="toggleAccordion(this)">
-                                    <span class="lang-ja">詳細を見る ▼</span>
-                                    <span class="lang-en">Details ▼</span>
+                                    ▼
                                 </button>
                                 <div class="member-description" style="display: none;">
                                     <p class="lang-ja">特に自社の技術・サービスを活用して地域活性化に貢献したい方。</p>
@@ -236,8 +232,7 @@
                                     <p class="lang-en">Local government industrial promotion staff, research institutions, venture capitalists, financial institutions, and economic organizations.</p>
                                 </div>
                                 <button class="read-more-btn" onclick="toggleAccordion(this)">
-                                    <span class="lang-ja">詳細を見る ▼</span>
-                                    <span class="lang-en">Details ▼</span>
+                                    ▼
                                 </button>
                                 <div class="member-description" style="display: none;">
                                     <p class="lang-ja">地域イノベーション推進に意欲を持つ組織・個人。</p>
@@ -366,16 +361,10 @@
 
             if (isExpanded) {
                 fullContent.style.display = 'none';
-                const buttonText = button.textContent.includes('Details') || button.textContent.includes('詳細');
-                button.innerHTML = buttonText
-                    ? '<span class="lang-ja">詳細を見る ▼</span><span class="lang-en">Details ▼</span>'
-                    : '<span class="lang-ja">続きを読む ▼</span><span class="lang-en">Read More ▼</span>';
+                button.innerHTML = '▼';
             } else {
                 fullContent.style.display = 'block';
-                const buttonText = button.textContent.includes('Details') || button.textContent.includes('詳細');
-                button.innerHTML = buttonText
-                    ? '<span class="lang-ja">閉じる ▲</span><span class="lang-en">Close ▲</span>'
-                    : '<span class="lang-ja">閉じる ▲</span><span class="lang-en">Close ▲</span>';
+                button.innerHTML = '▲';
             }
         }
     </script>

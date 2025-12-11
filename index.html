@@ -110,8 +110,7 @@
                             <span class="lang-en">We aim to become an innovation hub by combining Hitachi City's assets with the power of startups worldwide.</span>
                         </p>
                         <button class="read-more-btn" onclick="toggleAccordion(this)">
-                            <span class="lang-ja">続きを読む ▼</span>
-                            <span class="lang-en">Read More ▼</span>
+                            ▼
                         </button>
                         <p class="hero-description hero-description-full" style="display: none;">
                             <span class="lang-ja">世界中の技術を日立市に集約し、スペースポートを建設し、日立市を『世界の入り口』へと変える『HITACHI ドリーム・テクノロジー構想』の実現に挑戦します。</span>
@@ -301,8 +300,7 @@
                                         <span class="lang-en">Hitachi City has remarkable technology and history, yet faces new challenges. D&T was established to merge Dreams and Technology, paving the way for Hitachi's future.</span>
                                     </p>
                                     <button class="read-more-btn" onclick="toggleAccordion(this)">
-                                        <span class="lang-ja">続きを読む ▼</span>
-                                        <span class="lang-en">Read More ▼</span>
+                                        ▼
                                     </button>
                                     <p class="message-full" style="display: none;">
                                         <span class="lang-ja">スタートアップ企業を積極的に誘致し、実証実験を行いやすい環境を整備することで、新たな事業や雇用を創出し、地域経済の活性化に貢献してまいります。地元企業や行政、そして市民の皆様との連携を深め、日立市が持つポテンシャルを最大限に引き出し、新たなイノベーションが次々と生まれる活気ある街にしていく所存です。皆様のご支援とご協力を心よりお願い申し上げます。</span>
@@ -697,10 +695,10 @@
 
             if (isExpanded) {
                 fullContent.style.display = 'none';
-                button.innerHTML = '<span class="lang-ja">続きを読む ▼</span><span class="lang-en">Read More ▼</span>';
+                button.innerHTML = '▼';
             } else {
                 fullContent.style.display = 'block';
-                button.innerHTML = '<span class="lang-ja">閉じる ▲</span><span class="lang-en">Close ▲</span>';
+                button.innerHTML = '▲';
             }
         }
 

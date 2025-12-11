@@ -131,8 +131,7 @@
                             <span class="lang-en">We provide opportunities for domestic and international startups to experience Hitachi City's technology resources and business environment. Through site visits and networking events, we bridge startups with local businesses and government to create new opportunities. Leveraging the city's industrial clusters, research institutions, diverse geography, and access to Tokyo, we offer optimal conditions for startups.</span>
                         </p>
                         <button class="read-more-btn" onclick="toggleAccordion(this)">
-                            <span class="lang-ja">続きを読む ▼</span>
-                            <span class="lang-en">Read More ▼</span>
+                            ▼
                         </button>
                         <p class="overview-full" style="display: none;">
                             <span class="lang-ja">また、地元企業とスタートアップ企業との技術、人材、ノウハウの相互交流を促進し、地域経済の活性化とイノベーションの創出を同時に達成し、持続可能な地域発展のモデルケースとして全国へと波及させることを目指しています。</span>
@@ -299,10 +298,10 @@
 
             if (isExpanded) {
                 fullContent.style.display = 'none';
-                button.innerHTML = '<span class="lang-ja">続きを読む ▼</span><span class="lang-en">Read More ▼</span>';
+                button.innerHTML = '▼';
             } else {
                 fullContent.style.display = 'block';
-                button.innerHTML = '<span class="lang-ja">閉じる ▲</span><span class="lang-en">Close ▲</span>';
+                button.innerHTML = '▲';
             }
         }
     </script>
