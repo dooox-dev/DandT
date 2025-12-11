@@ -229,7 +229,7 @@ section {
 }
 
 .section-header h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--primary-navy);
     margin-bottom: 16px;
     font-weight: 700;
@@ -294,7 +294,7 @@ section {
 }
 
 .detail-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 16px;
     text-align: center;
@@ -323,7 +323,7 @@ section {
 }
 
 .content-section h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     color: var(--primary-navy);
     margin-bottom: 24px;
     font-weight: 700;
@@ -554,6 +554,40 @@ section {
     }
 
     .project-examples .project-example {
+        flex: 0 0 calc(100% - 80px);
+        scroll-snap-align: center;
+        max-width: 340px;
+        min-width: 280px;
+    }
+}
+
+/* 協業セッション写真 */
+.session-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* スマホ用セッション写真スワイプ */
+@media (max-width: 768px) {
+    .session-photos {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 20px;
+        padding: 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .session-photos::-webkit-scrollbar {
+        display: none;
+    }
+
+    .session-photos .photo-item {
         flex: 0 0 calc(100% - 80px);
         scroll-snap-align: center;
         max-width: 340px;
