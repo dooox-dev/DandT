@@ -123,8 +123,20 @@
             <div class="container">
                 <div class="content-section">
                     <h2><span class="lang-ja">事業概要</span><span class="lang-en">Overview</span></h2>
-                    <p class="lang-ja">日立市の企業が持つ技術やサービスを活かし、新たなビジネス機会を創出するためのマッチング支援を行います。地域企業とスタートアップ、研究機関、投資家などを繋ぐネットワークを活用し、最新の市場情報や技術トレンドの提供、ビジネスパートナーの紹介、協業機会の創出を通じて、企業の新規事業展開をサポートします。私たちは事業戦略を策定するのではなく、企業が持つリソースと市場のニーズを繋ぐ架け橋の役割を果たし、新しいビジネスチャンスを提供します。</p>
-                    <p class="lang-en">We support matching services to create new business opportunities leveraging Hitachi City companies' technologies and services. Using our network connecting local businesses, startups, research institutions, and investors, we support new business development through market insights, technology trends, partner introductions, and collaboration opportunities. We bridge company resources with market needs, providing new business chances rather than creating strategies.</p>
+                    <div class="accordion-section">
+                        <p class="overview-short">
+                            <span class="lang-ja">日立市の企業が持つ技術やサービスを活かし、新たなビジネス機会を創出するためのマッチング支援を行います。地域企業とスタートアップ、研究機関、投資家などを繋ぐネットワークを活用し、最新の市場情報や技術トレンドの提供、ビジネスパートナーの紹介、協業機会の創出を通じて、企業の新規事業展開をサポートします。</span>
+                            <span class="lang-en">We support matching services to create new business opportunities leveraging Hitachi City companies' technologies and services. Using our network connecting local businesses, startups, research institutions, and investors, we support new business development through market insights, technology trends, partner introductions, and collaboration opportunities.</span>
+                        </p>
+                        <button class="read-more-btn" onclick="toggleAccordion(this)">
+                            <span class="lang-ja">続きを読む ▼</span>
+                            <span class="lang-en">Read More ▼</span>
+                        </button>
+                        <p class="overview-full" style="display: none;">
+                            <span class="lang-ja">私たちは事業戦略を策定するのではなく、企業が持つリソースと市場のニーズを繋ぐ架け橋の役割を果たし、新しいビジネスチャンスを提供します。</span>
+                            <span class="lang-en">We bridge company resources with market needs, providing new business chances rather than creating strategies.</span>
+                        </p>
+                    </div>
                 </div>
 
                 <div class="content-section">
@@ -253,6 +265,21 @@
                 document.documentElement.setAttribute('lang', savedLang);
             }
         });
+
+        // アコーディオン機能
+        function toggleAccordion(button) {
+            const accordionSection = button.closest('.accordion-section');
+            const fullContent = accordionSection.querySelector('.overview-full, .message-full, .description-full, .member-description');
+            const isExpanded = fullContent.style.display === 'block';
+
+            if (isExpanded) {
+                fullContent.style.display = 'none';
+                button.innerHTML = '<span class="lang-ja">続きを読む ▼</span><span class="lang-en">Read More ▼</span>';
+            } else {
+                fullContent.style.display = 'block';
+                button.innerHTML = '<span class="lang-ja">閉じる ▲</span><span class="lang-en">Close ▲</span>';
+            }
+        }
 
         // 背景画像のカーソル連動動作
         document.addEventListener('mousemove', function(e) {

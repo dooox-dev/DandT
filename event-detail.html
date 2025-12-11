@@ -125,8 +125,20 @@
             <div class="container">
                 <div class="content-section">
                     <h2><span class="lang-ja">事業概要</span><span class="lang-en">Overview</span></h2>
-                    <p class="lang-ja">国内外のスタートアップ企業を対象に、日立市の魅力的な技術資源や事業環境に触れる機会を提供し、地域への誘致を図ります。視察イベントや交流会を通じて、スタートアップと地元企業・行政との橋渡し役を担い、新たなビジネス機会の創出を支援します。日立市が持つ豊かな産業集積、優秀な研究機関、海洋から山岳部までの多様な地理的環境、そして首都圧へのアクセスの良さといった特性を最大限に活用し、スタートアップ企業にとって最適な事業環境を提供します。また、地元企業とスタートアップ企業との技術、人材、ノイハウの相互交流を促進し、地域経済の活性化とイノベーションの創出を同時に達成し、持続可能な地域発展のモデルケースとして全国へと波及させることを目指しています。</p>
-                    <p class="lang-en">We provide opportunities for domestic and international startups to experience Hitachi City's technology resources and business environment. Through site visits and networking events, we bridge startups with local businesses and government to create new opportunities. Leveraging the city's industrial clusters, research institutions, diverse geography, and access to Tokyo, we offer optimal conditions for startups. We promote mutual exchange of technology, talent, and know-how to drive regional economic growth and innovation as a model for sustainable development nationwide.</p>
+                    <div class="accordion-section">
+                        <p class="overview-short">
+                            <span class="lang-ja">国内外のスタートアップ企業を対象に、日立市の魅力的な技術資源や事業環境に触れる機会を提供し、地域への誘致を図ります。視察イベントや交流会を通じて、スタートアップと地元企業・行政との橋渡し役を担い、新たなビジネス機会の創出を支援します。日立市が持つ豊かな産業集積、優秀な研究機関、海洋から山岳部までの多様な地理的環境、そして首都圏へのアクセスの良さといった特性を最大限に活用し、スタートアップ企業にとって最適な事業環境を提供します。</span>
+                            <span class="lang-en">We provide opportunities for domestic and international startups to experience Hitachi City's technology resources and business environment. Through site visits and networking events, we bridge startups with local businesses and government to create new opportunities. Leveraging the city's industrial clusters, research institutions, diverse geography, and access to Tokyo, we offer optimal conditions for startups.</span>
+                        </p>
+                        <button class="read-more-btn" onclick="toggleAccordion(this)">
+                            <span class="lang-ja">続きを読む ▼</span>
+                            <span class="lang-en">Read More ▼</span>
+                        </button>
+                        <p class="overview-full" style="display: none;">
+                            <span class="lang-ja">また、地元企業とスタートアップ企業との技術、人材、ノウハウの相互交流を促進し、地域経済の活性化とイノベーションの創出を同時に達成し、持続可能な地域発展のモデルケースとして全国へと波及させることを目指しています。</span>
+                            <span class="lang-en">We promote mutual exchange of technology, talent, and know-how to drive regional economic growth and innovation as a model for sustainable development nationwide.</span>
+                        </p>
+                    </div>
                 </div>
 
                 <div class="content-section">
@@ -278,6 +290,21 @@
                 document.documentElement.setAttribute('lang', savedLang);
             }
         });
+
+        // アコーディオン機能
+        function toggleAccordion(button) {
+            const accordionSection = button.closest('.accordion-section');
+            const fullContent = accordionSection.querySelector('.overview-full, .message-full, .description-full, .member-description');
+            const isExpanded = fullContent.style.display === 'block';
+
+            if (isExpanded) {
+                fullContent.style.display = 'none';
+                button.innerHTML = '<span class="lang-ja">続きを読む ▼</span><span class="lang-en">Read More ▼</span>';
+            } else {
+                fullContent.style.display = 'block';
+                button.innerHTML = '<span class="lang-ja">閉じる ▲</span><span class="lang-en">Close ▲</span>';
+            }
+        }
     </script>
 </body>
 </html>

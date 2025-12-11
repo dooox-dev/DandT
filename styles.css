@@ -2431,24 +2431,12 @@ img[src]:not([src=""])::before {
     margin: 20px 0;
 }
 
+/* デスクトップではボタンを非表示 */
 .read-more-btn {
-    background: none;
-    border: none;
-    color: var(--primary-red);
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 10px 0;
-    margin: 10px 0;
-    transition: all 0.3s ease;
-    display: inline-block;
+    display: none;
 }
 
-.read-more-btn:hover {
-    color: var(--light-red);
-    transform: translateY(-2px);
-}
-
+/* モバイルでのみアコーディオンボタンを表示 */
 @media (max-width: 768px) {
     .read-more-btn {
         display: block;
@@ -2456,31 +2444,68 @@ img[src]:not([src=""])::before {
         text-align: center;
         padding: 12px 20px;
         background: rgba(255, 255, 255, 0.9);
+        border: none;
         border-radius: 8px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        color: var(--primary-red);
         font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        margin: 15px 0;
+        transition: all 0.3s ease;
+    }
+
+    .read-more-btn:hover {
+        color: var(--light-red);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 }
 
 .hero-description-short,
-.message-short {
+.message-short,
+.overview-short,
+.member-description-short {
     margin-bottom: 0;
 }
 
 .hero-description-full,
-.message-full {
+.message-full,
+.overview-full,
+.member-description {
     margin-top: 15px;
-    animation: slideDown 0.3s ease-out;
+}
+
+/* モバイルでのみアニメーション適用 */
+@media (max-width: 768px) {
+    .hero-description-full,
+    .message-full,
+    .overview-full,
+    .member-description {
+        animation: slideDown 0.3s ease-out;
+    }
 }
 
 @keyframes slideDown {
     from {
         opacity: 0;
         max-height: 0;
+        transform: translateY(-10px);
     }
     to {
         opacity: 1;
-        max-height: 500px;
+        max-height: 1000px;
+        transform: translateY(0);
+    }
+}
+
+/* デスクトップでは折りたたみコンテンツを常に表示 */
+@media (min-width: 769px) {
+    .hero-description-full,
+    .message-full,
+    .overview-full,
+    .member-description {
+        display: block !important;
     }
 }
 
