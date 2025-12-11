@@ -128,9 +128,7 @@
                             <span class="lang-ja">「D&T会員」制度を中心とした活発なコミュニティを運営し、日立市関係者とスタートアップ、そして様々なステークホルダー間の継続的な交流・連携を促進します。スタンダード会員・プレミアム会員・クラウド会員・ANDサポーターの4つのカテゴリーによる会員制度を通じて、多様な背景を持つ参加者が相互に学び合い、新たなビジネス機会の創出や技術革新を推進する環境を提供しています。</span>
                             <span class="lang-en">We operate an active community centered on the "D&T Membership" system, promoting continuous exchange and collaboration among Hitachi City stakeholders, startups, and various participants. Through four membership categories—Standard, Premium, Crowd, and AND Supporter—we provide an environment where diverse participants learn from each other and drive business opportunities and innovation.</span>
                         </p>
-                        <button class="read-more-btn" onclick="toggleAccordion(this)">
-                            ▼
-                        </button>
+                        <button class="read-more-btn" onclick="toggleAccordion(this)"><span class="lang-ja">続きを読む</span><span class="lang-en">Read More</span></button>
                         <p class="overview-full" style="display: none;">
                             <span class="lang-ja">地域の課題解決と技術発展を結びつけ、実践的で社会に価値をもたらすプロジェクトの実現を支援し、参加者間の有機的な連携体制を構築しています。</span>
                             <span class="lang-en">We connect local challenges with technological advancement, supporting practical projects that deliver social value and building organic collaboration networks.</span>
@@ -140,6 +138,12 @@
 
                 <div class="content-section">
                     <h2><span class="lang-ja">会員種別</span><span class="lang-en">Membership Types</span></h2>
+                    <div class="swipe-indicator">
+                        <div class="swipe-hint">
+                            <span class="lang-ja">スワイプ</span>
+                            <span class="lang-en">Swipe</span>
+                        </div>
+                    </div>
                     <div class="member-types-grid">
                         <div class="member-type-card">
                             <div class="member-icon"></div>
@@ -150,9 +154,7 @@
                                     <p class="lang-ja">新技術や革新的アイデアを持つ国内外のスタートアップ、中小企業、新規事業を検討している企業の皆様。</p>
                                     <p class="lang-en">Domestic and international startups with innovative technologies, SMEs, and companies exploring new ventures.</p>
                                 </div>
-                                <button class="read-more-btn" onclick="toggleAccordion(this)">
-                                    ▼
-                                </button>
+                                <button class="read-more-btn" onclick="toggleAccordion(this)"><span class="lang-ja">続きを読む</span><span class="lang-en">Read More</span></button>
                                 <div class="member-description" style="display: none;">
                                     <p class="lang-ja">日立市での実証実験やビジネスパートナーとのマッチングを希望する方。</p>
                                     <p class="lang-en">Seeking PoC opportunities and partner matching in Hitachi City.</p>
@@ -177,9 +179,7 @@
                                     <p class="lang-ja">日立市での本格的な事業展開や大規模な実証実験を計画している成長期スタートアップ、中大企業の新規事業部門。</p>
                                     <p class="lang-en">Growth-stage startups and corporate new venture divisions planning full-scale business development or large-scale PoC in Hitachi City.</p>
                                 </div>
-                                <button class="read-more-btn" onclick="toggleAccordion(this)">
-                                    ▼
-                                </button>
+                                <button class="read-more-btn" onclick="toggleAccordion(this)"><span class="lang-ja">続きを読む</span><span class="lang-en">Read More</span></button>
                                 <div class="member-description" style="display: none;">
                                     <p class="lang-ja">次フェーズの資金調達や投資家とのマッチングを必要としている企業。</p>
                                     <p class="lang-en">Seeking next-phase fundraising and investor matching.</p>
@@ -204,9 +204,7 @@
                                     <p class="lang-ja">日立市周辺地域（日立市、高萩市、常陸太田市、常陸大宮市、大子町）に事業所や工場、店舗を有する地元企業、個人事業主、地域の農業・漁業関係者。</p>
                                     <p class="lang-en">Local businesses, sole proprietors, and agriculture/fishery professionals in the Hitachi region.</p>
                                 </div>
-                                <button class="read-more-btn" onclick="toggleAccordion(this)">
-                                    ▼
-                                </button>
+                                <button class="read-more-btn" onclick="toggleAccordion(this)"><span class="lang-ja">続きを読む</span><span class="lang-en">Read More</span></button>
                                 <div class="member-description" style="display: none;">
                                     <p class="lang-ja">特に自社の技術・サービスを活用して地域活性化に貢献したい方。</p>
                                     <p class="lang-en">Seeking to contribute to regional vitalization through their technologies and services.</p>
@@ -231,9 +229,7 @@
                                     <p class="lang-ja">日立市をはじめとする地方自治体の産業振興担当者、茨城大学・茨城工業高等専門学校などの研究教育機関、ベンチャーキャピタル、金融機関、経済団体。</p>
                                     <p class="lang-en">Local government industrial promotion staff, research institutions, venture capitalists, financial institutions, and economic organizations.</p>
                                 </div>
-                                <button class="read-more-btn" onclick="toggleAccordion(this)">
-                                    ▼
-                                </button>
+                                <button class="read-more-btn" onclick="toggleAccordion(this)"><span class="lang-ja">続きを読む</span><span class="lang-en">Read More</span></button>
                                 <div class="member-description" style="display: none;">
                                     <p class="lang-ja">地域イノベーション推進に意欲を持つ組織・個人。</p>
                                     <p class="lang-en">Committed to advancing regional innovation.</p>
@@ -356,15 +352,16 @@
         // アコーディオン機能
         function toggleAccordion(button) {
             const accordionSection = button.closest('.accordion-section');
-            const fullContent = accordionSection.querySelector('.overview-full, .member-description');
+            const fullContent = accordionSection.querySelector('.overview-full, .message-full, .description-full, .member-description');
             const isExpanded = fullContent.style.display === 'block';
+            const currentLang = document.documentElement.getAttribute('lang') || 'ja';
 
             if (isExpanded) {
                 fullContent.style.display = 'none';
-                button.innerHTML = '▼';
+                button.innerHTML = '<span class="lang-ja">続きを読む</span><span class="lang-en">Read More</span>';
             } else {
                 fullContent.style.display = 'block';
-                button.innerHTML = '▲';
+                button.innerHTML = '<span class="lang-ja">閉じる</span><span class="lang-en">Close</span>';
             }
         }
     </script>

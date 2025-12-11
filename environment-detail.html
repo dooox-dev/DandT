@@ -133,9 +133,7 @@
                             <span class="lang-ja">一般社団法人D&Tでは、国内外のスタートアップ企業が日立市の事業者や他のスタートアップなどと連携し、自社の技術の検証などを行えるように環境・人などのマッチングや実証実験フィールドの提供などを行っています。日立市の豊かな自然環境と産業基盤を活用し、新しい技術の実用化を加速するとともに、地域経済の活性化と持続的なイノベーション創出を目指しています。</span>
                             <span class="lang-en">D&T provides matching services and proof-of-concept fields to enable domestic and international startups to collaborate with Hitachi City businesses and verify their technologies. Leveraging the city's natural environment and industrial infrastructure, we accelerate technology commercialization, promote regional economic vitality, and foster sustainable innovation.</span>
                         </p>
-                        <button class="read-more-btn" onclick="toggleAccordion(this)">
-                            ▼
-                        </button>
+                        <button class="read-more-btn" onclick="toggleAccordion(this)"><span class="lang-ja">続きを読む</span><span class="lang-en">Read More</span></button>
                         <p class="overview-full" style="display: none;">
                             <span class="lang-ja">また、国内外の先進技術と地域の課題解決を結びつけることで、実用的で社会に価値をもたらす実証実験の実現を支援し、技術者・研究者・事業者間の有機的な連携体制を構築しています。</span>
                             <span class="lang-en">By connecting advanced technologies with local challenges, we support practical PoC initiatives that deliver social value and build organic collaboration networks among engineers, researchers, and businesses.</span>
@@ -145,6 +143,12 @@
 
                 <div class="content-section">
                     <h2><span class="lang-ja">提供するサービス</span><span class="lang-en">Services</span></h2>
+                    <div class="swipe-indicator">
+                        <div class="swipe-hint">
+                            <span class="lang-ja">スワイプ</span>
+                            <span class="lang-en">Swipe</span>
+                        </div>
+                    </div>
                     <div class="services-detail">
                         <div class="service-detail-item">
                             <h3><span class="lang-ja">実証実験の環境提供</span><span class="lang-en">PoC Environment Provision</span></h3>
@@ -183,6 +187,12 @@
 
                 <div class="content-section">
                     <h2><span class="lang-ja">進行中のプロジェクト例</span><span class="lang-en">Ongoing Projects</span></h2>
+                    <div class="swipe-indicator">
+                        <div class="swipe-hint">
+                            <span class="lang-ja">スワイプ</span>
+                            <span class="lang-en">Swipe</span>
+                        </div>
+                    </div>
                     <div class="project-examples">
                         <div class="project-example">
                             <div class="project-image">
@@ -317,13 +327,14 @@
             const accordionSection = button.closest('.accordion-section');
             const fullContent = accordionSection.querySelector('.overview-full, .message-full, .description-full, .member-description');
             const isExpanded = fullContent.style.display === 'block';
+            const currentLang = document.documentElement.getAttribute('lang') || 'ja';
 
             if (isExpanded) {
                 fullContent.style.display = 'none';
-                button.innerHTML = '▼';
+                button.innerHTML = '<span class="lang-ja">続きを読む</span><span class="lang-en">Read More</span>';
             } else {
                 fullContent.style.display = 'block';
-                button.innerHTML = '▲';
+                button.innerHTML = '<span class="lang-ja">閉じる</span><span class="lang-en">Close</span>';
             }
         }
     </script>

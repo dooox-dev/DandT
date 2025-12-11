@@ -109,9 +109,7 @@
                             <span class="lang-ja">日立市が持つ資産（技術・自然・人）と、国内外のスタートアップが持つ力（夢・アイデア）を掛け合わせ、世界に通用するイノベーションを創出する拠点となることを目指す団体です。</span>
                             <span class="lang-en">We aim to become an innovation hub by combining Hitachi City's assets with the power of startups worldwide.</span>
                         </p>
-                        <button class="read-more-btn" onclick="toggleAccordion(this)">
-                            ▼
-                        </button>
+                        <button class="read-more-btn" onclick="toggleAccordion(this)"><span class="lang-ja">続きを読む</span><span class="lang-en">Read More</span></button>
                         <p class="hero-description hero-description-full" style="display: none;">
                             <span class="lang-ja">世界中の技術を日立市に集約し、スペースポートを建設し、日立市を『世界の入り口』へと変える『HITACHI ドリーム・テクノロジー構想』の実現に挑戦します。</span>
                             <span class="lang-en">We strive to realize the "HITACHI Dream Technology Vision" by gathering global technologies in Hitachi City, building a spaceport, and transforming the city into a gateway to the world.</span>
@@ -299,9 +297,7 @@
                                         <span class="lang-ja">私たちが活動の拠点とする茨城県日立市は、素晴らしい技術と歴史を持つ街です。しかし、時代の変化とともに新たな課題も生まれています。『一般社団法人D&T』は、この課題解決の一翼を担うべく、『Dream(夢)』と『Technology(技術)』の力を融合させ、日立市の未来を切り拓くために設立されました。</span>
                                         <span class="lang-en">Hitachi City has remarkable technology and history, yet faces new challenges. D&T was established to merge Dreams and Technology, paving the way for Hitachi's future.</span>
                                     </p>
-                                    <button class="read-more-btn" onclick="toggleAccordion(this)">
-                                        ▼
-                                    </button>
+                                    <button class="read-more-btn" onclick="toggleAccordion(this)"><span class="lang-ja">続きを読む</span><span class="lang-en">Read More</span></button>
                                     <p class="message-full" style="display: none;">
                                         <span class="lang-ja">スタートアップ企業を積極的に誘致し、実証実験を行いやすい環境を整備することで、新たな事業や雇用を創出し、地域経済の活性化に貢献してまいります。地元企業や行政、そして市民の皆様との連携を深め、日立市が持つポテンシャルを最大限に引き出し、新たなイノベーションが次々と生まれる活気ある街にしていく所存です。皆様のご支援とご協力を心よりお願い申し上げます。</span>
                                         <span class="lang-en">By attracting startups and providing PoC environments, we create businesses, jobs, and revitalize the local economy. We collaborate with local companies, government, and citizens to maximize Hitachi's potential and foster continuous innovation. We appreciate your support.</span>
@@ -692,13 +688,14 @@
             const accordionSection = button.closest('.accordion-section');
             const fullContent = accordionSection.querySelector('.hero-description-full, .message-full');
             const isExpanded = fullContent.style.display === 'block';
+            const currentLang = document.documentElement.getAttribute('lang') || 'ja';
 
             if (isExpanded) {
                 fullContent.style.display = 'none';
-                button.innerHTML = '▼';
+                button.innerHTML = '<span class="lang-ja">続きを読む</span><span class="lang-en">Read More</span>';
             } else {
                 fullContent.style.display = 'block';
-                button.innerHTML = '▲';
+                button.innerHTML = '<span class="lang-ja">閉じる</span><span class="lang-en">Close</span>';
             }
         }
 

@@ -346,6 +346,33 @@ section {
     padding: 0 16px;
 }
 
+/* スマホ用サービス詳細スワイプ */
+@media (max-width: 768px) {
+    .services-detail {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 20px;
+        padding: 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .services-detail::-webkit-scrollbar {
+        display: none;
+    }
+
+    .services-detail .service-detail-item {
+        flex: 0 0 calc(100% - 80px);
+        scroll-snap-align: center;
+        max-width: 340px;
+        min-width: 280px;
+        margin-bottom: 0;
+    }
+}
+
 /* 会員種別グリッドレイアウト */
 .member-types-grid {
     display: grid;
@@ -353,6 +380,33 @@ section {
     gap: 40px;
     margin-top: 48px;
     padding: 0 16px;
+}
+
+/* スマホ用会員種別グリッドスワイプ */
+@media (max-width: 768px) {
+    .member-types-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 20px;
+        padding: 20px;
+        margin-left: 0;
+        margin-right: 0;
+        grid-template-columns: unset;
+    }
+
+    .member-types-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .member-types-grid .member-type-card {
+        flex: 0 0 calc(100% - 80px);
+        scroll-snap-align: center;
+        max-width: 340px;
+        min-width: 280px;
+    }
 }
 
 .member-type-card {
@@ -479,6 +533,32 @@ section {
     display: grid;
     gap: 40px;
     margin-top: 40px;
+}
+
+/* スマホ用プロジェクト事例スワイプ */
+@media (max-width: 768px) {
+    .project-examples {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 20px;
+        padding: 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .project-examples::-webkit-scrollbar {
+        display: none;
+    }
+
+    .project-examples .project-example {
+        flex: 0 0 calc(100% - 80px);
+        scroll-snap-align: center;
+        max-width: 340px;
+        min-width: 280px;
+    }
 }
 
 .project-example {
@@ -657,6 +737,25 @@ section {
     
     .target-areas {
         grid-template-columns: 1fr;
+    }
+
+    /* スマホ版の余白調整 */
+    .container {
+        padding: 0 20px;
+    }
+
+    /* スマホ版の行間調整 */
+    body {
+        line-height: 1.8;
+    }
+
+    p, li {
+        line-height: 1.8;
+    }
+
+    /* スマホ版の画像フィット調整 */
+    img {
+        object-fit: cover;
     }
 }
 
@@ -2013,13 +2112,7 @@ header {
         margin-bottom: 16px;
     }
 
-    /* 会員種別グリッド モバイル対応 */
-    .member-types-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        padding: 0 16px;
-    }
-
+    /* 会員種別カード モバイル対応 */
     .member-type-card {
         padding: 32px 24px;
     }
@@ -2426,42 +2519,17 @@ img[src]:not([src=""])::before {
     display: none;
 }
 
-/* アコーディオン機能 */
+/* アコーディオン機能を廃止 - すべてのコンテンツを常に表示 */
 .accordion-section {
     margin: 20px 0;
 }
 
-/* デスクトップではボタンを非表示 */
+/* 折りたたみボタンを完全に非表示 */
 .read-more-btn {
-    display: none;
+    display: none !important;
 }
 
-/* モバイルでのみアコーディオンボタンを表示 */
-@media (max-width: 768px) {
-    .read-more-btn {
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 12px 20px;
-        background: rgba(255, 255, 255, 0.9);
-        border: none;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        color: var(--primary-red);
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        margin: 15px 0;
-        transition: all 0.3s ease;
-    }
-
-    .read-more-btn:hover {
-        color: var(--light-red);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-}
-
+/* すべてのコンテンツを常に表示 */
 .hero-description-short,
 .message-short,
 .overview-short,
@@ -2473,44 +2541,17 @@ img[src]:not([src=""])::before {
 .message-full,
 .overview-full,
 .member-description {
+    display: block !important;
     margin-top: 15px;
-}
-
-/* モバイルでのみアニメーション適用 */
-@media (max-width: 768px) {
-    .hero-description-full,
-    .message-full,
-    .overview-full,
-    .member-description {
-        animation: slideDown 0.3s ease-out;
-    }
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        max-height: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        max-height: 1000px;
-        transform: translateY(0);
-    }
-}
-
-/* デスクトップでは折りたたみコンテンツを常に表示 */
-@media (min-width: 769px) {
-    .hero-description-full,
-    .message-full,
-    .overview-full,
-    .member-description {
-        display: block !important;
-    }
 }
 
 /* スワイプインジケーター（スクロールバー風） */
 .swipe-indicator {
+    display: none;
+}
+
+/* サービス詳細とプロジェクト事例用のスワイプインジケーター */
+.content-section .swipe-indicator {
     display: none;
 }
 
@@ -2521,6 +2562,15 @@ img[src]:not([src=""])::before {
         text-align: center;
         margin-top: -10px;
         margin-bottom: 20px;
+        padding: 10px 0;
+    }
+
+    /* サービス詳細とプロジェクト事例にスワイプヒントを追加 */
+    .content-section .swipe-indicator {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
         padding: 10px 0;
     }
 
@@ -2655,4 +2705,36 @@ img[src]:not([src=""])::before {
 button.btn {
     font-family: var(--font-primary);
     font-size: 1rem;
+}
+/* モバイル専用スタイル改善 */
+@media (max-width: 768px) {
+    /* 行間を広げる */
+    body, p, li, span, div {
+        line-height: 1.8 !important;
+    }
+
+    /* 左右に余白を追加 */
+    .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    /* すべての画像に object-fit: cover を適用 */
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+    }
+
+    /* セクション内の要素にも余白を確保 */
+    section .container,
+    .detail-content .container,
+    .hero-content,
+    .business-content,
+    .events-content,
+    .about-content,
+    .membership-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
